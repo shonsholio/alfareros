@@ -17,9 +17,7 @@ app.use(cors());
 
 
 // ROUTES
-app.use('/', (req,res) => {
-  res.send('ALFAREROS YUJU')
-})
+app.use('/', mainRoutes)
 
 // STATIC FILES
 app.use(express.static(path.join(__dirname, './public')))
