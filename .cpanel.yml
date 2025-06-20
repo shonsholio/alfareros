@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/alfareros/public_html/
+    - export DEPLOYPATH=/home/public_html/
     - /bin/rsync -av public/ $DEPLOYPATH
