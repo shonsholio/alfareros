@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
-const hostname = '127.0.0.1';
 const PORT = 3000;
 
 const app = express();
@@ -22,6 +21,6 @@ app.use('/', mainRoutes)
 // STATIC FILES
 app.use(express.static(path.join(__dirname, './public')))
 
-app.listen(PORT, hostname, () => {
+app.listen(PORT, () => {
   console.log('CONECTADOS AL PUERTO')
 })

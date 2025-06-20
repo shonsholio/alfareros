@@ -1,4 +1,5 @@
 const controller = {}
+const path = require('path')
 const fs = require('fs')
 
 controller.home = (req,res) => {
@@ -14,7 +15,7 @@ controller.docs = (req,res) => {
 }
 
 controller.pdf = (req,res) => {
-  const filePath = '/Users/LuisFerArevalo/Proyectos-Express/alfareros/public/extracts.pdf'
+  const filePath = path.join(__dirname, '../public/extracts.pdf');
   if(fs.existsSync(filePath)){
     console.log('SI EXISTE')
     res.sendFile(filePath)
