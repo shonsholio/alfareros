@@ -1,0 +1,11 @@
+# Habilitar el motor de reescritura
+RewriteEngine on
+
+# Permitir sobrescritura de configuración
+Options Indexes FollowSymLinks
+AllowOverride All
+Require all granted
+
+# Redireccionar todas las peticiones a Node.js
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ http://localhost:3000/$1 [P,QSA,L]

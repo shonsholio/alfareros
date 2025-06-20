@@ -16,14 +16,20 @@ https://color.adobe.com/es/mythemes
 
 ssh-keygen -t rsa -f ~/.ssh/repo -b 4096 -C "fzyzzjn2or0g@alfarerosdelalibertad.org"
 
-
 chown fzyzzjn2or0g:fzyzzjn2or0g ~/.ssh/config
 
 ssh -i ~/.ssh/repo -T git@github.com
 
+cat ~/.ssh/repo.pub
 
-cat ~/.ssh/alfareros.pub
-cat ~/.ssh/alfareros
+git clone git@github.com:shonsholio/alfareros.git
 
 
-git clone git@github.com:fzyzzjn2or0g/alfareros.git
+# Verificar que la clave existe
+ls -la ~/.ssh/repo*
+
+# Verificar permisos (deben ser 600)
+chmod 600 ~/.ssh/repo
+
+# Agregar la clave al agente SSH
+ssh-add ~/.ssh/repo
