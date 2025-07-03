@@ -15,10 +15,11 @@ controller.docs = (req,res) => {
 }
 
 controller.pdf = (req,res) => {
-  const filePath = path.join(__dirname, '../public/extracts.pdf');
+  doc = req.query.q
+  const filePath = path.join(__dirname, `../public/${doc}.pdf`);
   if(fs.existsSync(filePath)){
     console.log('SI EXISTE')
-    res.sendFile(filePath)
+    res.sendFile(filePath)  
   } else {
     console.log('NOS JODIMOS')
   }
